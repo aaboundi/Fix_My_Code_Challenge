@@ -1,7 +1,20 @@
-#!/usr/bin/python3
+#include <string.h>
+#include <stdlib.h>
+#include "lists.h"
 
-""" FizzBuzz
+/**
+ * free_dlistint - Free a list
+ *
+ * @head: A pointer to the first element of the list
+ */
+void free_dlistint(dlistint_t *head)
+{
+	dlistint_t *node;
 
-"""
-
-import sys
+	while (head)
+	{
+		node = head;
+		head = head->next;
+		free(node);
+	}
+}
